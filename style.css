@@ -291,7 +291,7 @@ body {
     flex-shrink: 0;
 }
 
-.course-card.white-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+.course-card.white-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; line-height: 1.3; text-align: center;}
 .card-image-placeholder { background-color: #f1f5f9; border-radius: 12px; height: 160px; display: flex; justify-content: center; align-items: center; margin-bottom: 25px; text-align: center; padding: 10px;}
 .mock-content-text { font-size: 0.8rem; font-weight: 800; color: #cbd5e1; letter-spacing: 0.05em; }
 .btn-more { background-color: #e2e8f0; color: #0f172a; border: none; padding: 14px; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%; margin-top: auto; }
@@ -344,7 +344,7 @@ body {
 .section-map { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
 .grid-map { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 .map-card { background-color: #121214; border: 1px solid #1f1f23; border-radius: 12px; padding: 35px 30px; }
-.map-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 15px; }
+.map-card h3 { font-size: 28px; font-weight: 700; margin-bottom: 15px; text-align: center; }
 .map-card p { color: #94a3b8; line-height: 24px; font-size: 0.95rem; }
 
 
@@ -352,7 +352,7 @@ body {
 .section-ai { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
 .ai-card { background-color: white; border: 2px solid #e6338f; border-radius: 20px; display: flex; overflow: hidden; }
 .ai-info { padding: 50px; flex: 1; }
-.ai-info h2 {color: #000000; font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+.ai-info h2 {color: #000000; font-size: 48px; font-weight: 800; margin-bottom: 20px; text-align: center;}
 .ai-desc-main { color: #000000;   font-size: 32px; font-weight: 200; margin-bottom: 15px; }
 .ai-desc-sub { color: #94a3b8; line-height: 24px; margin-bottom: 35px; }
 .btn-action { background: linear-gradient(135deg, #e6338f 0%, #b826b8 100%); color: #ffffff; border: none; padding: 14px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; }
@@ -473,7 +473,7 @@ body {
 .section-cta { max-width: 800px; margin: 100px auto; padding: 0 20px; text-align: center; }
 .section-cta h2 { font-size: 60px; font-weight: 800; margin-bottom: 20px; white-space: nowrap; text-align: center;}
 .section-cta p { color: white; line-height: 55px;font-size: 24px;font-weight: 400; margin-bottom: 40px;text-align: left; }
-.btn-cta-main { background: linear-gradient(135deg, #e6338f 0%, #b826b8 100%); color: #ffffff; border: none; padding: 16px 50px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 0 20px rgba(230, 51, 143, 0.3); cursor: pointer; }
+.btn-cta-main { background: linear-gradient(135deg, #e6338f 0%, #b826b8 100%); color: #ffffff; border: none; padding: 16px 50px; border-radius: 8px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 0 20px rgba(230, 51, 143, 0.3); cursor: pointer; text-decoration: none; }
 /* --- СТИЛІ ДЛЯ СПРАВЖНІХ ВІДЕО-БЛОКІВ --- */
 .video-preview-block {
     overflow: hidden; /* Щоб краї відео ховалися під закруглені кути рамки (border-radius: 16px) */
@@ -565,4 +565,488 @@ body {
 /* Коли наводимо на коло, змінюємо колір іконки (опціонально) */
 .icon-circle:hover img {
     filter: brightness(0) invert(1); /* Робить іконку білою при наведенні, якщо вона була чорною */
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Затемнення фону */
+}
+
+.modal-content {
+    background-color: #1c1c1f;
+    margin: 10% auto;
+    padding: 40px;
+    border: 1px solid #FF2E93;
+    width: 350px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    background: #ff75b8; /* Твій фірмовий рожевий */
+}
+
+.close-btn { float: right; cursor: pointer; font-size: 24px; }
+
+/* Стиль для кнопки реєстрації в хедері */
+.register-btn {
+    background-color: white; /* Твій рожевий */
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px; /* Заокруглені краї */
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.register-btn:hover {
+    background-color: #d6267a;
+    transform: scale(1.05);
+}
+
+/* Стиль для великої кнопки всередині модального вікна */
+.submit-btn {
+    width: 100%;
+    background-color: #FF2E93;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #d6267a;
+}
+
+
+/* 1. Хедер: градієнтний фон та вирівнювання */
+.main-header {
+    background: linear-gradient(90deg, #FF2E93 0%, #762164 100%); /* Твій фірмовий перехід */
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+.main-header nav {
+    margin-left: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.main-header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 2. Вітальний блок: центр та відступи */
+.welcome-page {
+    background-color: #0d0d0d;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3. Заголовки та текст */
+.welcome-container h1 {
+    font-size: 56px;
+    margin: 20px 0;
+    color: #ffffff;
+}
+
+.welcome-container p {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+/* 4. Кнопка "ПОЧАТИ КУРС" (рожева з макета) */
+.start-btn {
+    background: linear-gradient(90deg, #FF2E93 0%, #D6267A 100%);
+    color: white;
+    padding: 20px 50px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(255, 46, 147, 0.4);
+    transition: transform 0.2s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.logo-link {
+    display: inline-block;
+    cursor: pointer;
+    line-height: 0; /* Щоб картинка не давала зайвих відступів знизу */
+    transition: transform 0.2s;
+}
+
+.logo-link:hover {
+    transform: scale(1.05); /* Легкий ефект при наведенні, щоб було зрозуміло, що це клікабельно */
+}
+
+.mini-logo {
+    display: block;
+    width: 60px; /* або той розмір, який у тебе зараз */
+    height: auto;
+}
+
+
+
+/* Базові налаштування тексту */
+.accent-pink { color: #FF2E93; }
+
+.main-title { font-size: 48px; text-align: center; margin-bottom: 50px;margin-top: 100px; }
+.section-title { font-size: 32px; text-align: center; margin-bottom: 20px; }
+.description { max-width: 1200px; margin: 0 auto 40px; line-height: 1.9; font-size: 28px;margin-top: 80px; }
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.video-box {
+    width: 450px; /* Твоя ширина */
+    border: 2px solid #FF2E93; /* Рожева рамка */
+    padding: 15px; /* ЦЕ КЛЮЧ: відступ всередині рамки до відео */
+    background: #000;
+    border-radius: 12px;
+    
+    /* Важливо: дозволяє паддінгу бути всередині ширини */
+    box-sizing: border-box; 
+}
+
+.video-box video {
+    width: 100%; /* Відео заповнює доступне місце всередині паддінгу */
+    display: block;
+    border-radius: 4px; /* Невелике заокруглення самого відео */
+    background: #000;
+}
+
+.squash-stretch-section {
+    margin: 60px 0;
+}
+
+.theory-grid {
+    display: grid;
+    /* Змінюємо пропорції: графік тепер займає 55%, текст — 45% */
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 50px;
+    align-items: center;
+}
+
+.theory-text {
+    padding-left: 50px;
+    line-height: 1.8; /* Збільшуємо інтервал, щоб текст "дихав" */
+    font-size: 24px;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.theory-image {
+    /* Рамку прибрано, фон прозорий */
+    background: transparent;
+    padding: 0;
+}
+
+.theory-image img {
+    width: 100%;
+    /* Додаємо легку тінь, щоб фото "відділилося" від фону без рамки */
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5));
+    border-radius: 8px;
+}
+.ae-section { margin: 60px 0; }
+.ae-section h2 {
+    font-size: 36px; text-align: center; margin-bottom: 50px;margin-top: 100px;
+}
+
+.ae-section p {
+    font-size: 24px;  margin-bottom: 20px; padding-left: 50px; line-height: 1.8;font-weight: 500; max-width: 1200px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує ВСЕ по горизонталі */
+    width: 100%;
+}
+
+
+/* Картка з картинкою */
+.ae-main-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px; /* Твій розмір */
+    margin: 20px auto; /* Центруємо по сторінці */
+}
+
+.ae-image {
+    width: 100%;
+    display: block;
+}
+
+/* Рожева рамка підписів */
+.ae-labels-frame {
+    max-width: 600px; /* Та сама ширина, що у картки */
+    margin: 0 auto; /* Центруємо */
+    border: 2px solid #FF2E93; /* Твоя рожева рамка */
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    color: white; /* Підписи на темному фоні сторінки */
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.tools-section { margin-top: 60px; text-align: center; }
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити блоки на новий рядок */
+    justify-content: center; /* Центрує блоки в обох рядках */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.vid-box {
+    flex: 0 0 300px; /* Ширина одного квадрата */
+    border: 2px solid #FF2E93; /* Твоя рожева рамка */
+    padding: 10px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vid-box video {
+    width: 100%;
+    height: 280px; /* Фіксована висота для відео */
+    object-fit: cover; /* Щоб відео не розтягувалося */
+}
+
+.vid-box span {
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.quiz-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    color: black;
+    max-width: 600px;
+    margin: 40px auto;
+}
+.quiz-box p {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+}
+
+#next-lesson-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FF2E93;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    
+    /* Додаємо властивості для плавного переходу */
+    opacity: 0; 
+    transition: opacity 0.8s ease-in-out; 
+    
+    /* Щоб кнопка не займала місце до того, як з'явиться */
+    pointer-events: none; 
+}
+
+/* Клас, який ми будемо додавати через JS */
+#next-lesson-btn.is-visible {
+    opacity: 1;
+    pointer-events: auto; /* Тепер на неї можна натиснути */
+}
+
+
+.video-wrapper {
+    width: 100%;
+    max-width: 600px; /* або підлаштуй під ширину свого контейнера */
+   
+    margin: 20px auto;
+    /* Рожева рамка як на макеті */
+    border: 2px solid #FF2E93; 
+    padding: 5px; /* невеликий відступ всередині рамки */
+    border-radius: 8px;
+    background: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+    border-radius: 4px;
+}
+
+
+.shortcuts-grid {
+    display: grid;
+    /* Створюємо 3 колонки однакової ширини */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* Налаштування для карток */
+.shortcut-card {
+    border: 2px solid #FF2E93;
+    padding: 20px;
+    border-radius: 12px;
+    background: #111;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+/* Спеціальний трюк: 2 нижні картки */
+/* Ми скажемо останнім двом карткам зайняти більше місця, 
+   або просто зробимо їх центрованими через grid-column */
+
+.shortcut-card:nth-child(4) {
+    grid-column: 1 / 2; /* це не потрібно, але для логіки */
+}
+
+/* Робимо 4-ту і 5-ту картку по центру, якщо їх всього 5 */
+.shortcut-card:nth-last-child(2) {
+    grid-column: 1 / 2; /* Початок другого ряду */
+}
+
+/* Кращий варіант для красивого центрування 2-х карток: */
+.shortcuts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.shortcut-card {
+    flex: 0 0 300px; /* Фіксована ширина кожної картки */
+}
+/* Ефект при наведенні */
+.shortcut-card:hover {
+    background: rgba(255, 46, 147, 0.15); /* Легкий рожевий фон */
+    transform: translateY(-10px); /* Піднімається вгору */
+    box-shadow: 0 10px 20px rgba(255, 46, 147, 0.3); /* Тінь */
+}
+
+.shortcut-card h3 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.shortcut-card p {
+    color: #ccc;
+    font-size: 16px;
+}
+
+/* Контейнер сітки */
+.tips-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* Картка */
+.tip-card {
+    width: 300px;
+    padding: 30px;
+    border: 1px solid #333;
+    border-radius: 16px;
+    background: #0d0d0d;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Ефект підсвічування при наведенні */
+.tip-card:hover {
+    border-color: #FF2E93;
+    box-shadow: 0 0 20px rgba(255, 46, 147, 0.2);
+    transform: translateY(-10px);
+}
+
+/* Налаштування зображень */
+.tip-image {
+    width: 100%;       /* Займає всю ширину картки */
+    max-height: 120px; /* Фіксована висота, щоб картки були рівними */
+    object-fit: contain; /* Зображення не буде розтягуватися */
+    margin: 20px 0;
+}
+
+/* Текст */
+.tip-card h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 20px;
+}
+
+.tip-card p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
 }

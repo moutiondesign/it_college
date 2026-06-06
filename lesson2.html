@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Урок 2 | Motion Verse</title>
+</head>
+<body>
+
+   <header class="site-header">
+        <div class="header-container">
+            
+            <div class="header-left">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-link">
+    <img src="img/1.png" alt="Motion Verse Mascot" class="mini-logo">
+</a>
+                    <span class="logo-subtext">Motion Verse</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#">Навчання</a>
+                    <a href="#">Про нас</a>
+                    <a href="#">Блог</a>
+                </nav>
+            </div>
+
+
+        </div>
+    </header>
+
+    <section class="lesson-header">
+    <h1 class="main-title">Урок 2: Налаштування <span class="gradient-text">Adobe After Effects</span></h1>
+    <h2  class="section-title">Налаштування кешу та пам'яті</h2>
+    
+    <div class="video-wrapper">
+        <video controls>
+            <source src="./img/28.mp4" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+    </div>
+</section>
+
+<section class="shortcuts-section">
+    <h2 class="section-title">Золота <span class="gradient-text">п'ятірка клавіш</span> для швидкості</h2>
+    <div class="shortcuts-grid">
+        <div class="shortcut-card"><h3>P</h3><p>Переміщення об'єкта по осях X та Y.</p></div>
+        <div class="shortcut-card"><h3>S</h3><p>Зміна масштабу та розміру об'єкта.</p></div>
+        <div class="shortcut-card"><h3>R</h3><p>Обертання об'єкта навколо осі.</p></div>
+        <div class="shortcut-card"><h3>T</h3><p>Регулювання прозорості (Transparency).</p></div>
+        <div class="shortcut-card"><h3>U</h3><p>Відображення всіх активних ключових точок.</p></div>
+    </div>
+</section>
+
+<section class="tips-section">
+    <h2 class="section-title">Готуємо <span class="gradient-text">After Effects</span> до роботи: Налаштування "під себе"</h2>
+    
+    <div class="tips-grid">
+        <div class="tip-card">
+            <h3>RAM Preview</h3>
+            <img src="./img/47.png" alt="RAM Icon" class="tip-image">
+            <p>Залиш для інших програм мінімум 4-8 GB. Все інше віддай для After Effects.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Workspace Keys</h3>
+            <img src="./img/46.png" alt="Keyboard Icon" class="tip-image">
+            <p>Навчись перемикати вікна клавішами ( ~ ) (тильда) — це твій головний шлях до швидкості.</p>
+        </div>
+
+        <div class="tip-card">
+            <h3>Disk Cache</h3>
+            <img src="./img/48.png" alt="Disk Cache Icon" class="tip-image">
+            <p>Виділи мінімум 50-100 GB на швидкому SSD для плавного відтворення.</p>
+        </div>
+    </div>
+</section>
+
+<section class="quiz-section">
+    <h2  class="section-title"><span class="gradient-text">Фінальне</span> питання до уроку!</h2>
+    <div class="quiz-box">
+        <p>Чому важливо налаштувати Disk Cache та виділити достатньо оперативної пам'яті для After Effects ще до початку роботи над проектом?</p>
+        
+        <div class="options">
+            <button onclick="checkAnswer('A')">А) Це пришвидшує рендер фінального відео для YouTube.</button>
+            <button onclick="checkAnswer('B', true)">Б) Це запобігає зависанню програми та дозволяє плавно переглядати ("програвати") анімацію в реальному часі. </button>
+            <button onclick="checkAnswer('C')">В) Це єдина умова для того, щоб After Effects взагалі запустився на комп'ютері.</button>
+            <button onclick="checkAnswer('D')">Г) Це потрібно лише для 3D-анімації, у 2D це не відіграє ніякої ролі.</button>
+        </div>
+        
+        <p id="quiz-message"></p>
+        <a id="next-lesson-btn" href="lesson3.html" style="display:none;">Перейти до 3 уроку!</a>
+    </div>
+</section>
+ <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/1.png" alt="Footer Mascot">
+            </div>
+            <div class="footer-info">
+                <h3>Зв'яжіться з нами</h3>
+                <a href="mailto:support@motionverse.school">support@motionverse.school</a>
+            </div>
+           <div class="footer-socials">
+    <h3>Соцмережі</h3>
+    <div class="social-icons">
+        <a href="#" class="icon-circle tg"><img src="./img/30.png" alt="Telegram"></a>
+        <a href="#" class="icon-circle yt"><img src="./img/31.png" alt="YouTube"></a>
+        <a href="#" class="icon-circle ig"><img src="./img/32.png" alt="Instagram"></a>
+        <a href="#" class="icon-circle fb"><img src="./img/33.png" alt="Facebook"></a>
+    </div>
+</div>
+        </div>
+    </footer>
+
+ <script src="script.js"></script>
+ </body>
+</html>

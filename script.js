@@ -113,3 +113,47 @@ document.querySelectorAll('.video-preview-block').forEach(block => {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const modal = document.getElementById("registerModal");
+    const btn = document.querySelector(".register-btn"); 
+    const closeBtn = document.querySelector(".close-btn");
+    const form = document.getElementById("registerForm");
+
+    if (btn) {
+        btn.onclick = () => modal.style.display = "block";
+    }
+
+    if (closeBtn) {
+        closeBtn.onclick = () => modal.style.display = "none";
+    }
+
+    if (form) {
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            window.location.href = "lesson1.html";
+        };
+    }
+});
+
+function checkAnswer(answer, isCorrect) {
+    const message = document.getElementById('quiz-message');
+    const nextBtn = document.getElementById('next-lesson-btn');
+
+    if (isCorrect) {
+        message.innerHTML = "<span style='color: green; font-weight: bold;'>Правильно! Переходьте далі.</span>";
+        
+        // Змінюємо display на flex або block, щоб елемент став видимим для розмітки
+        nextBtn.style.display = "inline-block";
+        
+        // Маленька затримка (setTimeout) потрібна, щоб браузер "відчув" 
+        // перехід між display: none -> block і зміг відтворити transition
+        setTimeout(() => {
+            nextBtn.classList.add('is-visible');
+        }, 50);
+        
+    } else {
+        message.innerHTML = "<span style='color: red;'>Неправильно. Спробуйте ще раз!</span>";
+    }
+}

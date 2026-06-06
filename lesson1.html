@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Урок 1 | Motion Verse</title>
+</head>
+<body>
+
+   <header class="site-header">
+        <div class="header-container">
+            
+            <div class="header-left">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-link">
+    <img src="img/1.png" alt="Motion Verse Mascot" class="mini-logo">
+</a>
+                    <span class="logo-subtext">Motion Verse</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#">Навчання</a>
+                    <a href="#">Про нас</a>
+                    <a href="#">Блог</a>
+                </nav>
+            </div>
+
+
+        </div>
+    </header>
+
+   <section class="lesson-section">
+    <h1 class="main-title">Урок 1 <span class="gradient-text">Мистецтво руху</span></h1>
+    <h2 class="section-title">Розділ 1: Вступ (Теоретичний блок)</h2>
+    
+    <p class="description">
+        <span class="gradient-text">Motion-дизайн</span> — це дисципліна, що поєднує графічний дизайн та часову шкалу. 
+        Це перехід від статики до динаміки, де кожна зміна стану об'єкта несе комунікативний зміст. 
+        Основою нашої професії є фізика сприйняття: ми не просто рухаємо пікселі, ми створюємо відчуття ваги, 
+        інерції та емоційного відгуку у глядача.
+    </p>
+
+   <div class="video-grid">
+    <div class="video-box">
+        <video controls>
+            <source src="./img/20.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="video-box">
+        <video controls>
+            <source src="./img/21.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
+    </div>
+</section>
+
+<section class="squash-stretch-section">
+    <h2 class="section-title">
+        <span class="gradient-text">Squash and Stretch</span> (Стискання та розтягування)
+    </h2>
+    
+    <div class="theory-grid">
+        <p class="theory-text">
+            Цей принцип є фундаментом моушн-дизайну, який надає об'єктам ілюзію ваги, гнучкості та живої природи. 
+            Під час руху або зіткнення об'єкт деформується: він розтягується в напрямку руху та стискається 
+            при ударі об поверхню, зберігаючи при цьому свій загальний об'єм. Саме завдяки цій техніці 
+            анімація перестає бути "пластиковою" і стає фізично відчутною для глядача.
+        </p>
+        
+        <div class="theory-image">
+            <img src="./img/40.png" alt="Squash and Stretch diagram">
+        </div>
+    </div>
+</section>
+
+
+<section class="ae-section">
+    <h2 class="section-title">Розділ 2: знайомство з <span class="gradient-text">Adobe After Effects</span></h2>
+    <p>Робочий простір Adobe After Effects може здатися перевантаженим, але він побудований на логіці трьох рівнів: проекту, сцени та часу</p>
+
+    <div class="ae-main-box">
+        <img src="./img/41.png" alt="AE Interface" class="ae-image">
+    </div>
+
+    <div class="ae-labels-frame">
+        <span><b>А.</b> Вікно програми</span>
+        <span><b>В.</b> Згруповані панелі</span>
+        <span><b>С.</b> Окрема панель</span>
+    </div>
+</section>
+
+
+<section class="video-grid-section">
+    <h2 class="section-title">Розділ 3: Золота <span class="gradient-text">п'ятірка </span> інструментів</h2>
+    <div class="video-grid">
+        <div class="vid-box"><video src="./img/22.mp4" controls></video><span>Position (P)</span></div>
+        <div class="vid-box"><video src="./img/23.mp4" controls></video><span>Scale (S)</span></div>
+        <div class="vid-box"><video src="./img/24.mp4" controls></video><span>Rotation (R)</span></div>
+        
+        <div class="vid-box"><video src="./img/25.mp4" controls></video><span>Opacity (T)</span></div>
+        <div class="vid-box"><video src="./img/26.mp4" controls></video><span>Keyframes</span></div>
+    </div>
+</section>
+
+<section class="quiz-section">
+    <h2  class="section-title"><span class="gradient-text">Фінальне</span> питання до уроку!</h2>
+    <div class="quiz-box">
+        <p>Чим, на вашу думку, моушн-дизайн кардинально відрізняється від статичного?</p>
+        
+        <div class="options">
+            <button onclick="checkAnswer('A')">А) В моушн-дизайні використовуються лише 3D-об'єкти, а в графічному — лише 2D.</button>
+            <button onclick="checkAnswer('B', true)">Б) Моушн-дизайн додає до композиції четвертий вимір — час, що дозволяє керувати увагою глядача через динаміку та розвиток історії.</button>
+            <button onclick="checkAnswer('C')">В) Моушн-дизайн не потребує знань композиції, оскільки рух "замінює" якість візуалу.</button>
+            <button onclick="checkAnswer('D')">Г) Це лише спосіб зробити відео привабливішим для соціальних мереж.</button>
+        </div>
+        
+        <p id="quiz-message"></p>
+        <a id="next-lesson-btn" href="lesson2.html" style="display:none;">Перейти до 2 уроку!</a>
+    </div>
+</section>
+
+ <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/1.png" alt="Footer Mascot">
+            </div>
+            <div class="footer-info">
+                <h3>Зв'яжіться з нами</h3>
+                <a href="mailto:support@motionverse.school">support@motionverse.school</a>
+            </div>
+           <div class="footer-socials">
+    <h3>Соцмережі</h3>
+    <div class="social-icons">
+        <a href="#" class="icon-circle tg"><img src="./img/30.png" alt="Telegram"></a>
+        <a href="#" class="icon-circle yt"><img src="./img/31.png" alt="YouTube"></a>
+        <a href="#" class="icon-circle ig"><img src="./img/32.png" alt="Instagram"></a>
+        <a href="#" class="icon-circle fb"><img src="./img/33.png" alt="Facebook"></a>
+    </div>
+</div>
+        </div>
+    </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
