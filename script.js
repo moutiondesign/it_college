@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (form) {
         form.onsubmit = (e) => {
             e.preventDefault();
-            window.location.href = "lesson1.html";
+            window.location.href = "welcome.html";
         };
     }
 });
