@@ -114,31 +114,57 @@ document.querySelectorAll('.video-preview-block').forEach(block => {
     });
 });
 
-const modal = document.getElementById("auth-modal");
-const closeBtn = document.querySelector(".close");
-const modalTitle = document.getElementById("modal-title");
-const nameField = document.getElementById("name-field"); // Це поле для імені
-const submitBtn = document.getElementById("submit-btn");
+function openAuthModal(type) {
+    const modal = document.getElementById("auth-modal");
+    const title = document.getElementById("modal-title");
+    const nameInput = document.getElementById("name-input");
+    const submitBtn = document.getElementById("submit-btn");
 
-// Функція для Входу
-function openLogin() {
-    modalTitle.innerText = "Вхід";
-    nameField.style.display = "none"; // Вхід без імені
-    submitBtn.innerText = "Увійти";
+    title.innerText = type;
+    
+    if (type === 'Реєстрація') {
+        nameInput.style.display = "block";
+        submitBtn.innerText = "Зареєструватися";
+    } else {
+        nameInput.style.display = "none";
+        submitBtn.innerText = "Увійти";
+    }
+
     modal.style.display = "block";
 }
 
-// Функція для Реєстрації
-function openRegister() {
-    modalTitle.innerText = "Реєстрація";
-    nameField.style.display = "block"; // Реєстрація з іменем
-    submitBtn.innerText = "Зареєструватися";
-    modal.style.display = "block";
+// Закриття вікна
+document.querySelector(".close-btn").onclick = () => {
+    document.getElementById("auth-modal").style.display = "none";
+};
+
+window.onclick = (event) => {
+    const modal = document.getElementById("auth-modal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+
+// --- ВИПРАВЛЕНА ЛОГІКА ПЕРЕХОДУ ---
+// Переконайся, що в HTML твоя форма має id="auth-form"
+const authForm = document.getElementById("auth-form");
+
+if (authForm) {
+    authForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Зупиняємо відправку форми
+
+        const title = document.getElementById("modal-title").innerText;
+
+        if (title === "Реєстрація") {
+            // Твоє посилання для реєстрації
+            window.location.href = "welcome.html"; 
+        } else {
+            // Твоє посилання для входу
+            window.location.href = "welcome.html"; // або інша сторінка
+        }
+    });
 }
 
-// Закриття
-closeBtn.onclick = () => modal.style.display = "none";
-window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 
 function checkAnswer(answer, isCorrect) {
     const message = document.getElementById('quiz-message');
