@@ -114,28 +114,31 @@ document.querySelectorAll('.video-preview-block').forEach(block => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    
-    const modal = document.getElementById("registerModal");
-    const btn = document.querySelector(".register-btn"); 
-    const closeBtn = document.querySelector(".close-btn");
-    const form = document.getElementById("registerForm");
+const modal = document.getElementById("auth-modal");
+const closeBtn = document.querySelector(".close");
+const modalTitle = document.getElementById("modal-title");
+const nameField = document.getElementById("name-field"); // Це поле для імені
+const submitBtn = document.getElementById("submit-btn");
 
-    if (btn) {
-        btn.onclick = () => modal.style.display = "block";
-    }
+// Функція для Входу
+function openLogin() {
+    modalTitle.innerText = "Вхід";
+    nameField.style.display = "none"; // Вхід без імені
+    submitBtn.innerText = "Увійти";
+    modal.style.display = "block";
+}
 
-    if (closeBtn) {
-        closeBtn.onclick = () => modal.style.display = "none";
-    }
+// Функція для Реєстрації
+function openRegister() {
+    modalTitle.innerText = "Реєстрація";
+    nameField.style.display = "block"; // Реєстрація з іменем
+    submitBtn.innerText = "Зареєструватися";
+    modal.style.display = "block";
+}
 
-    if (form) {
-        form.onsubmit = (e) => {
-            e.preventDefault();
-            window.location.href = "welcome.html";
-        };
-    }
-});
+// Закриття
+closeBtn.onclick = () => modal.style.display = "none";
+window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; };
 
 function checkAnswer(answer, isCorrect) {
     const message = document.getElementById('quiz-message');

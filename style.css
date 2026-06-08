@@ -1238,3 +1238,90 @@ body {
     color: #ffffff;
 }
 
+/* Контейнер для меню */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Кнопка меню */
+.dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+/* Контент меню (прихований за замовчуванням) */
+.dropdown-content {
+    display: none; /* Залишаємо для логіки */
+    position: absolute;
+    top: 100%; /* Притискаємо меню донизу кнопки */
+    left: 0;
+    padding-top: 15px; /* МІСТОК: дозволяє курсору безпечно перейти з кнопки в меню */
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px; /* Робимо фон містка прозорим */
+    min-width: 160px;
+    z-index: 1000;
+}
+
+/* Посилання в меню */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Рожевий акцент при наведенні */
+.dropdown-content a:hover {
+    background-color: #FF2E93;
+    border-radius: 8px;
+}
+
+/* Логіка відкриття */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.btn-cta-main-1 {
+     background: linear-gradient(135deg, #e6338f 0%, #b826b8 100%); 
+     color: #ffffff; 
+     border: none;
+     padding: 16px 50px; 
+     border-radius: 8px; font-weight: 700; 
+     font-size: 1.1rem; box-shadow: 0 0 20px rgba(230, 51, 143, 0.3); 
+     cursor: pointer;
+      text-decoration: none;
+    text-align: center; 
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Центрує по горизонталі */
+    align-items: center;     /* Центрує по вертикалі, якщо треба */
+    padding: 20px 0;         /* Трохи відступів зверху/знизу */
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999; /* Обов'язково велике число */
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background: #1a1a1a;
+    margin: 15% auto;
+    padding: 30px;
+    width: 300px;
+    border: 1px solid #FF2E93;
+    border-radius: 12px;
+    text-align: center;
+}
+.close { cursor: pointer; float: right; color: #fff; }
+
