@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Урок 3 | Motion Verse</title>
+</head>
+<body>
+
+   <header class="site-header">
+        <div class="header-container">
+            
+            <div class="header-left">
+                <div class="logo-area">
+                    <a href="index.html" class="logo-link">
+    <img src="img/1.png" alt="Motion Verse Mascot" class="mini-logo">
+</a>
+                    <span class="logo-subtext">Motion Verse</span>
+                </div>
+                <nav class="main-nav">
+                    <a href="#">Навчання</a>
+                    <a href="#">Про мене</a>
+                    <a href="#">Блог</a>
+                </nav>
+            </div>
+
+
+        </div>
+    </header>
+
+   <section class="lesson-header">
+    <h1 class="main-title">Урок 3: <span class="gradient-text">Магія</span>шейпів та композиції</span></h1>
+    <h2  class="section-title"><span class="gradient-text">Створення лого</span> з простих елементів</h2>
+
+       <div class="video-wrapper">
+        <video controls>
+            <source src="./img/444.mp4" type="video/mp4">
+            Ваш браузер не підтримує відео.
+        </video>
+    </div>
+</section>
+
+<section class="simple-elements-section">
+    <h2 class="section-title"><span class="gradient-text">Прості</span> елементи</h2>
+    <div class="cards-container">
+        <div class="card">
+            <img src="./img/100.png" alt="Fill/Stroke">
+            <h3>Fill/Stroke</h3>
+        </div>
+        <div class="card">
+            <img src="./img/101.png" alt="Geometric Primitives">
+            <h3>Geometric Primitives</h3>
+        </div>
+        <div class="card">
+            <img src="./img/104.png" alt="Layer Order">
+            <h3>Layer Order</h3>
+        </div>
+    </div>
+</section>
+
+<section class="complex-elements-section">
+    <h2 class="section-title"><span class="gradient-text">Складні </span> елементи</h2>
+    
+    <div class="complex-card">
+        <h3 style="font-size: 24px;">Group Shapes</h3>
+        <div class="image-placeholder">
+            <img src="./img/104.gif" alt="Group Shapes">
+        </div>
+        <p style="font-size: 20px;">Групуй об'єкти, щоб керувати ними як одним цілим, не втрачаючи контролю над кожним.</p>
+    </div>
+
+    <div class="complex-card">
+        <h3 style="font-size: 24px;">Path Operations</h3>
+        <div class="image-placeholder">
+            <img src="./img/105.png" alt="Group Shapes">
+        </div>
+        <p style="font-size: 20px;">Оживляй контури: створюй лінії, що малюються самі собою за допомогою Trim Paths.</p>
+    </div>
+
+    <div class="complex-card">
+        <h3 style="font-size: 24px;">Masks</h3>
+        <div class="image-placeholder">
+            <img src="./img/106.png" alt="Group Shapes">
+        </div>
+        <p style="font-size: 20px;">Використовуй маски, щоб приховувати або показувати лише частину зображення.</p>
+
+    </div>
+</section>
+
+<section class="quiz-section">
+    <h2  class="section-title"><span class="gradient-text">Фінальне</span> питання до уроку!</h2>
+    <div class="quiz-box">
+        <p>Ти створив персонажа, використовуючи багато різних шейпів в одному шарі. Як найкраще організувати цей шар, щоб легко анімувати голову окремо від тулуба?</p>
+        
+        <div class="options">
+            <button onclick="checkAnswer('A')">А) Створити окремий шар для кожної фігури .</button>
+            <button onclick="checkAnswer('B', true)">Б) Використати групування (Group) всередині шейпового шару, щоб об'єднати елементи голови в одну групу, а тулуба — в іншу. </button>
+            <button onclick="checkAnswer('C')">В) Перевести все в растрову картинку, щоб не заплутатися в шейпах.</button>
+            <button onclick="checkAnswer('D')">Г) Використати маску (Mask) для кожного окремого елемента.</button>
+        </div>
+        
+        <p id="quiz-message"></p>
+        <a id="next-lesson-btn" href="test.html" style="display:none;">Перейти до фінального тестування!</a>
+    </div>
+</section>
+ <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/1.png" alt="Footer Mascot">
+            </div>
+            <div class="footer-info">
+                <h3>Зв'яжіться з нами</h3>
+                <a href="mailto:support@motionverse.school">support@motionverse.school</a>
+            </div>
+           <div class="footer-socials">
+    <h3>Соцмережі</h3>
+    <div class="social-icons">
+        <a href="#" class="icon-circle tg"><img src="./img/30.png" alt="Telegram"></a>
+        <a href="#" class="icon-circle yt"><img src="./img/31.png" alt="YouTube"></a>
+        <a href="#" class="icon-circle ig"><img src="./img/32.png" alt="Instagram"></a>
+        <a href="#" class="icon-circle fb"><img src="./img/33.png" alt="Facebook"></a>
+    </div>
+</div>
+        </div>
+    </footer>
+
+ <script src="script.js"></script>
+ </body>
+</html>
+
+

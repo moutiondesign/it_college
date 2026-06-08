@@ -882,7 +882,13 @@ body {
     color: black;
     max-width: 600px;
     margin: 40px auto;
+    
+    /* Додаємо Flexbox для центрування контенту */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Це центрує кнопку і текст по горизонталі */
 }
+
 .quiz-box p {
     text-align: center;
     line-height: 1.6;
@@ -897,27 +903,25 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    text-align: left;
+    text-align: center;
 }
 
 #next-lesson-btn {
-    display: inline-block;
+    display: block;                /* Змінюємо з inline-block на block для роботи margin */
+    width: fit-content;            /* Щоб кнопка не розтягувалася на всю ширину */
+    margin: 20px auto 0 auto;      /* Центруємо горизонтально */
     padding: 10px 20px;
     background: #FF2E93;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 20px;
     
-    /* Додаємо властивості для плавного переходу */
     opacity: 0; 
     transition: opacity 0.8s ease-in-out; 
-    
-    /* Щоб кнопка не займала місце до того, як з'явиться */
     pointer-events: none; 
 }
 
-/* Клас, який ми будемо додавати через JS */
+
 #next-lesson-btn.is-visible {
     opacity: 1;
     pointer-events: auto; /* Тепер на неї можна натиснути */
@@ -1050,3 +1054,187 @@ body {
     font-size: 14px;
     line-height: 1.5;
 }
+
+
+.simple-elements-section {
+    padding: 40px 20px;
+}
+
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.card {
+    /* Твої існуючі стилі */
+    border: 1px solid #FF2E93;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    background: #1a1a1a;
+    
+    /* Додаємо плавність для анімації */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ефект при наведенні */
+.card:hover {
+    transform: scale(1.05); /* Легке збільшення на 5% */
+    border-color: #ffffff;  /* Рамка стає білою */
+    box-shadow: 0 0 20px rgba(255, 46, 147, 0.5); /* Рожеве сяйво */
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+.complex-elements-section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.complex-card {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.complex-card:hover {
+    border-color: #FF2E93;
+    transform: translateY(-5px);
+}
+
+.complex-card h3 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.image-placeholder img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #222;
+}
+
+
+.option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border: 1px solid #FF2E93;
+    background: transparent;
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #FF2E93;
+}
+
+/* Контейнер для всього тесту */
+#quiz-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Оформлення окремого питання */
+.quiz-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+}
+
+.quiz-item p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Стиль для кнопок відповідей */
+.quiz-item button {
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-item button:hover {
+    border-color: #FF2E93;
+}
+
+/* Кнопка "Показати результат" */
+#show-result-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    background: #FF2E93;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#show-result-btn:hover {
+    background: #d6247a;
+    transform: scale(1.02);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.image-box {
+    width: 450px;
+    flex-shrink: 0;
+    /* Оці налаштування створять відступ між фото і рамкою: */
+    padding: 10px;           /* Відступ з усіх сторін */
+    border: 3px solid #FF2E93; /* Твоя рожева рамка */
+    border-radius: 20px;      /* Скруглення рамки */
+    background-color: #1a1a1a; /* Колір "проміжку" (можна поставити чорний, як фон) */
+}
+
+.image-box img {
+    width: 100%;
+    display: block;           /* Прибирає зайві пробіли під фото */
+    border-radius: 12px;      /* Скруглення самої фотографії */
+}
+.text-box p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+

@@ -157,3 +157,67 @@ function checkAnswer(answer, isCorrect) {
         message.innerHTML = "<span style='color: red;'>Неправильно. Спробуйте ще раз!</span>";
     }
 }
+
+// 1. Ось сам список твоїх питань
+const quizData = [
+    { q: "Який інструмент створює кола?", options: ["A) Rectangle", "B) Ellipse", "C) Pen", "D) Brush"], correct: 1 },
+    { q: "Що таке Stroke?", options: ["A) Колір заливки", "B) Обводка", "C) Прозорість", "D) Поворот"], correct: 1 },
+    { q: "Як називається ефект для анімації лінії?", options: ["A) Mask", "B) Group", "C) Trim Paths", "D) Opacity"], correct: 2 },
+    { q: "Для чого потрібні маски?", options: ["A) Щоб вирізати частину", "B) Щоб змінити колір", "C) Щоб видалити шар", "D) Для звуку"], correct: 0 },
+    { q: "Як об'єднати кілька шейпів?", options: ["A) Mask", "B) Group", "C) Null", "D) Pre-compose"], correct: 1 },
+    { q: "Як називається панель з таймлайном?", options: ["A) Project", "B) Timeline", "C) Effects", "D) Toolbar"], correct: 1 },
+    { q: "Що робить параметр Fill?", options: ["A) Заливку кольором", "B) Обводку", "C) Тінь", "D) Світіння"], correct: 0 },
+    { q: "Чи можна анімувати форму?", options: ["A) Ні", "B) Так", "C) Тільки колір", "D) Тільки розмір"], correct: 1 },
+    { q: "Де знаходяться властивості шейпа?", options: ["A) У меню File", "B) У Contents", "C) У Effect Controls", "D) Ніде"], correct: 1 },
+    { q: "Як приховати частину шару?", options: ["A) Mask", "B) Fill", "C) Stroke", "D) Anchor Point"], correct: 0 },
+    { q: "Яка клавіша для виклику Scale?", options: ["A) P", "B) R", "C) S", "D) T"], correct: 2 },
+    { q: "Для чого потрібен Anchor Point?", options: ["A) Точка обертання", "B) Колір", "C) Масштаб", "D) Ефект"], correct: 0 },
+    { q: "Чи можна групувати групи?", options: ["A) Ні", "B) Так", "C) Тільки 2 рази", "D) Тільки 1 раз"], correct: 1 },
+    { q: "Що таке шлях (Path)?", options: ["A) Форма лінії", "B) Колір", "C) Звук", "D) Відео"], correct: 0 },
+    { q: "Який шар краще для масковання?", options: ["A) Solid", "B) Null", "C) Shape", "D) Text"], correct: 2 },
+    { q: "Яке значення у Trim Paths 'End' на початку?", options: ["A) 0%", "B) 50%", "C) 100%", "D) -100%"], correct: 2 },
+    { q: "Що робить клавіша U?", options: ["A) Повертає все", "B) Показує ключі", "C) Видаляє шар", "D) Створює маску"], correct: 1 },
+    { q: "Де міняють товщину обводки?", options: ["A) Stroke Width", "B) Fill Color", "C) Mask Path", "D) Opacity"], correct: 0 },
+    { q: "Чи обов'язково мати Stroke?", options: ["A) Так", "B) Ні", "C) Тільки для фігур", "D) Тільки для тексту"], correct: 1 },
+    { q: "Який результат уроків?", options: ["A) Перше лого", "B) Складний сайт", "C) Нічого", "D) 3D гра"], correct: 0 }
+];
+
+// 2. Генерація питань в HTML
+const list = document.getElementById('questions-list');
+quizData.forEach((item, index) => {
+    list.innerHTML += `<div class="quiz-item" data-qidx="${index}" style="margin-bottom:20px;">
+        <p>${index + 1}. ${item.q}</p>
+        ${item.options.map((opt, i) => `<button onclick="select(this, ${i}, ${index})">${opt}</button>`).join(' ')}
+    </div>`;
+});
+
+// 3. Логіка вибору та перевірки
+let userAnswers = {};
+function select(btn, optIdx, qIdx) {
+    userAnswers[qIdx] = optIdx;
+    btn.parentElement.querySelectorAll('button').forEach(b => b.style.background = '#333');
+    btn.style.background = '#FF2E93';
+}
+
+document.getElementById('show-result-btn').addEventListener('click', () => {
+    let score = 0;
+    quizData.forEach((item, qIdx) => {
+        const questionDiv = document.querySelector(`.quiz-item[data-qidx="${qIdx}"]`);
+        if (!questionDiv) return;
+        const buttons = questionDiv.querySelectorAll('button');
+        
+        buttons.forEach((btn, optIdx) => {
+            btn.disabled = true;
+            if (optIdx === item.correct) {
+                btn.style.border = '2px solid #00FF00';
+            } else if (userAnswers[qIdx] === optIdx && userAnswers[qIdx] !== item.correct) {
+                btn.style.border = '2px solid #FF0000';
+            }
+        });
+        if(userAnswers[qIdx] === item.correct) score++;
+    });
+    const res = document.getElementById('final-score');
+    res.style.display = 'block';
+    res.innerHTML = `Твій результат: ${score} з 20.`;
+});
+
